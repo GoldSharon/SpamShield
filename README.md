@@ -11,8 +11,8 @@ SpamShield is a web-based application designed to detect spam messages using a m
 
 ## Project Structure
 
-SpamShield/
-│
+SpamShield/<br>
+│<br>
 ├── app.py # Main application file <br>
 ├── templates/<br>
 │ ├── index.html # Home page template<br>
