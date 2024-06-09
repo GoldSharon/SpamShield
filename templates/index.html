@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #0099f7, #f11712);
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 3em;
+            animation: neon 1.5s infinite alternate;
+            border-bottom: 4px solid #fff;
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+        }
+
+        @keyframes neon {
+            from {
+                color: #fff;
+                text-shadow: 0 0 3px #fff, 0 0 5px #ff00de;
+            }
+            to {
+                color: #ffb3ff;
+                text-shadow: 0 0 5px #fff, 0 0 8px #ff00de;
+            }
+        }
+
+        h2, h3 {
+            color: #00BFFF;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            border: 2px solid #3498db;
+            max-width: 95%;
+            color: #333;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1em;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        .decorative-border, .quote {
+            border: 5px solid #fff;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            color: #333;
+        }
+
+        .error {
+            color: red;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        textarea {
+            width: 100%; /* Full width of the form */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-size: 1em;
+            border: 3px solid #3498db;
+            background-color: #f3f3f3;
+            box-sizing: border-box;
+            resize: none; /* Disable resizing */
+            min-height: 150px;
+        }
+
+        @media (min-width: 600px) {
+            textarea {
+                width: 90%; /* Adjusted width for larger screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Spam Checker</h1>
+    <div class="quote">
+        <h2>Welcome to SpamShield!</h2>
+        <p>Tired of spam cluttering your inbox? Say goodbye to unwanted emails with SpamShield, your free, reliable, and easy-to-use spam checker. Our advanced AI technology ensures your inbox stays clean and secure.</p>
+        <p><strong>Why choose SpamShield?</strong></p>
+        <ul>
+            <li>Free and Easy to Use: No sign-up required. Simply paste your email content, and we'll do the rest.</li>
+            <li>Advanced AI Detection: Our cutting-edge AI algorithms accurately detect spam, phishing, and other malicious content.</li>
+            <li>Instant Results: Get real-time spam analysis in just seconds.</li>
+            <li>Privacy First: Your data is safe with us. We never store or share your information.</li>
+        </ul>
+        <p>Start enjoying a spam-free inbox today with SpamShield!</p>
+        <p><strong>Try it now and experience the difference!</strong></p>
+    </div>
+    <div class="decorative-border">
+        <form action="/submit" method="post">
+            <h3>Enter the message in this box</h3>
+            <textarea id="Check" name="Check" placeholder="Paste your sms or mail here" rows="5"></textarea><br>
+            <input type="submit" value="Check">
+        </form>
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>

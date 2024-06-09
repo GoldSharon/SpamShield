@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spam Checker Result</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: {% if flag %}linear-gradient(to bottom, #ffe0e0, #ffb2b2){% else %}linear-gradient(to bottom, #e0ffe0, #b2ffb2){% endif %};
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            color: #333;
+        }
+
+        h1 {
+            color: {% if flag %}#e74c3c{% else %}#4caf50{% endif %};
+            font-size: 3em;
+            animation: neon 1.5s infinite alternate;
+            border-bottom: 4px solid {% if flag %}#e74c3c{% else %}#4caf50{% endif %};
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+        }
+
+        h3 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .result {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            border: 2px solid {% if flag %}#e74c3c{% else %}#4caf50{% endif %};
+            max-width: 100%;
+            width: 90%;
+            box-sizing: border-box;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        @keyframes neon {
+            from { color: {% if flag %}#e74c3c{% else %}#4caf50{% endif %}; }
+            to { color: {% if flag %}#c0392b{% else %}#388e3c{% endif %}; }
+        }
+
+        .decorative-border {
+            border: 5px solid {% if flag %}#e74c3c{% else %}#4caf50{% endif %};
+            padding: 10px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: {% if flag %}#ffebee{% else %}#e8f5e9{% endif %};
+            max-width: 600px;
+        }
+
+        .not-spam {
+            color: green;
+        }
+
+        .spam {
+            color: red;
+        }
+
+        .back-button {
+            background-color: {% if flag %}#e74c3c{% else %}#4caf50{% endif %};
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            background-color: {% if flag %}#c0392b{% else %}#388e3c{% endif %};
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+
+            .back-button {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="decorative-border">
+        <h1>Spam Checker Result</h1>
+        <div class="result">
+            <h3>Result:</h3>
+            {% if flag %}
+                <p class="spam">The message you entered is <strong>spam</strong>.</p>
+            {% else %}
+                <p class="not-spam">The message you entered is <strong>not spam</strong>.</p>
+            {% endif %}
+        </div>
+        <a href="/" class="back-button">Check Another Message</a>
+    </div>
+</body>
+</html>
