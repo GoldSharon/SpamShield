@@ -13,15 +13,15 @@ SpamShield is a web-based application designed to detect spam messages using a m
 
 SpamShield/
 │
-├── app.py # Main application file
-├── templates/
-│ ├── index.html # Home page template
-│ └── predict.html # Result page template
-├── models/
-│ ├── Spam_Model.joblib # Pre-trained model
-│ └── Vectorizer.joblib # Vectorizer for text transformation
-├── README.md # Project README file
-└── requirements.txt # Python dependencies
+├── app.py # Main application file <br>
+├── templates/<br>
+│ ├── index.html # Home page template<br>
+│ └── predict.html # Result page template<br>
+├── models/<br>
+│ ├── Spam_Model.joblib # Pre-trained model<br>
+│ └── Vectorizer.joblib # Vectorizer for text transformation<br>
+├── README.md # Project README file<br>
+└── requirements.txt # Python dependencies<br>
 
 
 ## Installation
