@@ -27,7 +27,7 @@ SpamShield/<br>
 ## Installation
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/yourusername/SpamShield.git
+    git clone https://github.com/GoldSharon/spam_checker
     cd SpamShield
     ```
 
